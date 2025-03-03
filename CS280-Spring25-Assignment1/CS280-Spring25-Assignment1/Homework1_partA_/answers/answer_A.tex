@@ -1,0 +1,61 @@
+\section{Answer for Maximum Likelihood Estimation}
+
+\textbf{(a) Derivation of Log-Likelihood}  
+
+Given the noise $\epsilon \sim N(0, \sigma^2)$, the conditional distribution of each sample $y^i$ is:
+$$ y^i \mid x^i_1, x^i_2 \sim N\left(f_{\theta_1,\theta_2}(x^i_1, x^i_2), \sigma^2\right). $$
+
+Using the probability density function of the Gaussian distribution (Equation (4)), the likelihood for a single sample is:
+$$ p(y^i \mid x^i_1, x^i_2, \theta_1, \theta_2) = \frac{1}{\sqrt{2\pi}\sigma} \exp\left(-\frac{(y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2))^2}{2\sigma^2}\right). $$
+
+Since the samples are independent and identically distributed (i.i.d.), the total likelihood is the product of individual likelihoods:
+$$ L(\mathcal{D}; \theta_1, \theta_2) = \prod_{i=1}^n \frac{1}{\sqrt{2\pi}\sigma} \exp\left(-\frac{(y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2))^2}{2\sigma^2}\right). $$
+
+Taking the logarithm and simplifying:
+$$
+\begin{aligned}
+l(\mathcal{D}; \theta_1, \theta_2) &= \sum_{i=1}^n \ln\left( \frac{1}{\sqrt{2\pi}\sigma} \exp\left(-\frac{(y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2))^2}{2\sigma^2}\right) \right) \\
+&= \sum_{i=1}^n \left( -\ln(\sqrt{2\pi}\sigma) - \frac{(y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2))^2}{2\sigma^2} \right) \\
+&= -\frac{1}{2\sigma^2} \sum_{i=1}^n (y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2))^2 - n\ln(\sqrt{2\pi}\sigma).
+\end{aligned}
+$$
+
+Thus, the log-likelihood is:
+\begin{equation*}
+    \textcolor{red}{l(\mathcal{D};\theta_1,\theta_2) = -\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y^i-f_{\theta_1,\theta_2}(x^i_1,x^i_2))^2 -n\log(\sqrt{2\pi}\sigma)}
+\end{equation*}    
+% $$ \boxed{l(\mathcal{D};\theta_1,\theta_2) = -\frac{1}{2\sigma^2}\sum_{i=1}^{n}(y^i-f_{\theta_1,\theta_2}(x^i_1,x^i_2))^2 -n\log(\sqrt{2\pi}\sigma)}. $$
+
+
+\textbf{(b) Gradient Computation}  
+
+The partial derivative with respect to $\theta_1$ is:
+$$
+\begin{aligned}
+\frac{\partial l}{\partial \theta_1} &= -\frac{1}{2\sigma^2} \sum_{i=1}^n \frac{\partial}{\partial \theta_1} \left( y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2) \right)^2 \\
+&= -\frac{1}{2\sigma^2} \sum_{i=1}^n 2 \left( y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2) \right) \cdot \left(-\frac{\partial f_{\theta_1,\theta_2}}{\partial \theta_1}\right) \\
+&= \frac{1}{\sigma^2} \sum_{i=1}^n \left( y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2) \right) \frac{\partial f_{\theta_1,\theta_2}}{\partial \theta_1}.
+\end{aligned}
+$$
+
+Similarly, the partial derivative with respect to $\theta_2$ is:
+$$ \frac{\partial l}{\partial \theta_2} = \frac{1}{\sigma^2} \sum_{i=1}^n \left( y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2) \right) \frac{\partial f_{\theta_1,\theta_2}}{\partial \theta_2}. $$
+
+The gradient vector is:
+\begin{equation*}
+    \textcolor{red}{\nabla_{\theta_1, \theta_2} l = \left[ \frac{1}{\sigma^2} \sum_{i=1}^n \left( y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2) \right) \frac{\partial f_{\theta_1,\theta_2}}{\partial \theta_1}, \  \frac{1}{\sigma^2} \sum_{i=1}^n \left( y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2) \right) \frac{\partial f_{\theta_1,\theta_2}}{\partial \theta_2} \right]}
+\end{equation*}
+
+% $$ \boxed{\nabla_{\theta_1, \theta_2} l = \left[ \frac{1}{\sigma^2} \sum_{i=1}^n \left( y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2) \right) \frac{\partial f_{\theta_1,\theta_2}}{\partial \theta_1}, \  \frac{1}{\sigma^2} \sum_{i=1}^n \left( y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2) \right) \frac{\partial f_{\theta_1,\theta_2}}{\partial \theta_2} \right]}. $$
+
+
+\textbf{(c) Gradient Descent Update Rule}  
+To maximize the likelihood, we use gradient ascent. The update rule for parameters is:
+$$ \theta_j^{(k+1)} = \theta_j^{(k)} + \eta \cdot \frac{\partial l}{\partial \theta_j}, \quad j=1,2. $$
+Substituting the gradient expressions, we get:
+
+\begin{equation*}
+    \textcolor{red}{
+        \theta_j^{(k+1)} = \theta_j^{(k)} + \frac{\eta}{\sigma^2} \sum_{i=1}^n \left( y^i - f_{\theta_1,\theta_2}(x^i_1, x^i_2) \right) \frac{\partial f_{\theta_1,\theta_2}}{\partial \theta_j}, \quad j=1,2
+    }
+\end{equation*}

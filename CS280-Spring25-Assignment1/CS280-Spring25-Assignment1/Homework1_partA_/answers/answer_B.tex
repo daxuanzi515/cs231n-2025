@@ -1,0 +1,92 @@
+\section{Answer for Loss Functions}
+\subsubsection*{(a) Appropriate loss functions}
+
+From the provided plots (a)--(e) (with the x-axis being $yF(x)$ and the y-axis being $L(yF(x))$), 
+we see that only (a) and (b) are monotonically decreasing and approach 0 as $yF(x)\to +\infty$. 
+These two satisfy the typical requirements for classification loss:
+\begin{itemize}
+  \item $L(t)\ge 0$ for all $t$,
+  \item $L(t)$ is decreasing in $t$,
+  \item $L(t)\to 0$ as $t\to +\infty$ (correct classification with large margin),
+  \item $L(t)$ becomes large when $t\ll 0$ (incorrect classification with large negative margin).
+\end{itemize}
+\noindent
+\textbf{Analysis of subfigures (a)-(e):}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|l|c|}
+    \hline
+    Subfigure & Characteristics & Appropriate? \\
+    \hline
+    (a) & Exponentially decreasing curve: $L \approx 10 \rightarrow 0$ as $yF(x)$ increases & \checkmark \\
+    (b) & Saturated loss: Flat regions for $|yF(x)|>2$, sharp transition near $yF(x)=0$ & \checkmark \\
+    (c) & Bell-shaped curve: Peaks at $yF(x)=0$ (\textit{opposite} to required monotonicity) & $\times$ \\
+    (d) & Increasing linear function: $L \propto yF(x)$ (\textit{violates} the decreasing requirement) & $\times$ \\
+    (e) & Logistic-like curve but reversed sign: does not decrease as $yF(x)$ grows & $\times$ \\
+    \hline
+    \end{tabular}
+\end{table}
+
+Only (a) and (b) are \emph{monotonically decreasing} in $yF(x)$ and approach 0 when $yF(x)\to +\infty$. 
+
+Hence, (a) and (b) are appropriate for classification; (c), (d), and (e) are not.
+
+\subsubsection*{(b) Robustness to outliers}
+
+Among the appropriate loss functions, (a) resembles the exponential loss, while (b) resembles a logistic-type loss. 
+The exponential loss $\exp(-yF(x))$ grows very large for highly negative margins and is therefore 
+more sensitive to outliers. The logistic loss saturates more smoothly, making it more robust to outliers.
+Hence, (b) is the most robust among them.
+
+\subsubsection*{(c) Gradient descent updates for $L\bigl(yF(x)\bigr)=\frac{1}{1+\exp\bigl(yF(x)\bigr)}$}
+
+Let the training set be $\{(x^i,\,y^i)\}_{i=1}^n$, where $y^i\in\{-1,+1\}$, and define 
+\[
+F(x^i) \;=\; w_0 \;+\;\sum_{j=1}^d w_j\,x_j^i.
+\]
+Then the loss for sample $i$ is
+\[
+L_i \;=\; L\bigl(y^i F(x^i)\bigr)
+     \;=\; \frac{1}{1 + \exp\bigl(y^i F(x^i)\bigr)}.
+\]
+We want to minimize the sum $\displaystyle \sum_{i=1}^n L_i$.
+
+\paragraph{Partial derivatives.}
+Let $z_i = y^i F(x^i)$. Then
+\[
+L_i \;=\; \frac{1}{1 + e^{z_i}}, 
+\quad
+\frac{\partial L_i}{\partial z_i} 
+=\; -\,\frac{e^{z_i}}{\bigl(1 + e^{z_i}\bigr)^2}
+=\; -\,L_i\,(1 - L_i).
+\]
+Note also that 
+\(\displaystyle \frac{\partial z_i}{\partial w_0} = y^i\),
+and 
+\(\displaystyle \frac{\partial z_i}{\partial w_j} = y^i\,x_j^i.\)
+
+Hence,
+\[
+\frac{\partial L_i}{\partial w_0}
+=\; \frac{\partial L_i}{\partial z_i}\,\frac{\partial z_i}{\partial w_0}
+=\; -\,y^i\,L_i\,(1 - L_i),
+\]
+\[
+\frac{\partial L_i}{\partial w_j}
+=\; -\,y^i\,x_j^i\,L_i\,(1 - L_i).
+\]
+
+\paragraph{Gradient descent updates.}
+Let $\alpha$ be the learning rate. Then the update rules for each iteration are:
+\[
+w_0 \;\leftarrow\; w_0 \;-\; \alpha \sum_{i=1}^n \frac{\partial L_i}{\partial w_0}
+\;=\; w_0 \;+\; \alpha \sum_{i=1}^n 
+     \Bigl[y^i\,L_i\,\bigl(1 - L_i\bigr)\Bigr],
+\]
+\[
+w_j \;\leftarrow\; w_j \;-\; \alpha \sum_{i=1}^n \frac{\partial L_i}{\partial w_j}
+\;=\; w_j \;+\; \alpha \sum_{i=1}^n 
+     \Bigl[y^i\,x_j^i\,L_i\,\bigl(1 - L_i\bigr)\Bigr],
+\]
+where 
+\(\displaystyle L_i = \frac{1}{1 + \exp\bigl(y^i F(x^i)\bigr)}.\)
