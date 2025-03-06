@@ -42,27 +42,27 @@ cd cs231n/datasets
 
 Complete each notebook, then once you are done, go to the [submission instructions](#submitting-your-work).
 
-### Q0: Perceptron Learning Algorithm (15 points)
+### ✅Q0: Perceptron Learning Algorithm (15 points)
 
 The notebook **perceptron.ipynb** will walk you through implementing the perceptron algorithm.
 
-### Q1: k-Nearest Neighbor classifier (20 points)
+### ✅Q1: k-Nearest Neighbor classifier (20 points)
 
 The notebook **knn.ipynb** will walk you through implementing the kNN classifier.
 
-### Q2: Training a Support Vector Machine (20 points)
+### ✅Q2: Training a Support Vector Machine (20 points)
 
 The notebook **svm.ipynb** will walk you through implementing the SVM classifier.
 
-### Q3: Implement a Softmax classifier (20 points)
+### ✅Q3: Implement a Softmax classifier (20 points)
 
 The notebook **softmax.ipynb** will walk you through implementing the Softmax classifier.
 
-### Q4: Two-Layer Neural Network (20 points)
+### ✅Q4: Two-Layer Neural Network (20 points)
 
 The notebook **two\_layer\_net.ipynb** will walk you through the implementation of a two-layer neural network classifier.
 
-### Q5: Higher Level Representations: Image Features (10 points)
+### ✅Q5: Higher Level Representations: Image Features (10 points)
 
 The notebook **features.ipynb** will examine the improvements gained by using higher-level representations
 as opposed to using raw pixel values.
@@ -72,3 +72,32 @@ as opposed to using raw pixel values.
 **Important**. Please make sure that the submitted notebooks have been run and the cell outputs are visible.
 
 Please follow the instructions on **Piazza** to submit your homework.
+
+
+
+
+
+Start Point in each turn launch:
+
+```python
+from google.colab import drive
+drive.mount('/content/drive')
+
+# TODO: Enter the foldername in your Drive where you have saved the unzipped
+# assignment folder, e.g. 'cs231n/assignments/assignment1/'
+FOLDERNAME = "cs231n/assignments/assignment1/"
+assert FOLDERNAME is not None, "[!] Enter the foldername."
+
+# Now that we've mounted your Drive, this ensures that
+# the Python interpreter of the Colab VM can load
+# python files from within it.
+import sys
+sys.path.append('/content/drive/My Drive/{}'.format(FOLDERNAME))
+
+# This downloads the CIFAR-10 dataset to your Drive
+# if it doesn't already exist.
+%cd /content/drive/My\ Drive/$FOLDERNAME/cs231n/datasets/
+!bash get_datasets.sh
+%cd /content/drive/My\ Drive/$FOLDERNAME
+```
+
