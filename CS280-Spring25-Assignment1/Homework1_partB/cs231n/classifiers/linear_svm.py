@@ -82,11 +82,9 @@ def svm_loss_vectorized(W, X, y, reg):
     # result in loss.                                                           #
     #############################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
-
-    # pass
     N = X.shape[0]
-    scores = X.dot(W) # N x C
-    margin = scores - scores[range(0,N), y].reshape(-1, 1) + 1 # N x C
+    scores = X.dot(W) 
+    margin = scores - scores[range(0,N), y].reshape(-1, 1) + 1 
     margin[range(N), y] = 0
     margin = (margin > 0) * margin
     loss += margin.sum() / N
