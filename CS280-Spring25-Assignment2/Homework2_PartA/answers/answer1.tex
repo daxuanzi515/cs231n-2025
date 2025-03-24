@@ -1,0 +1,44 @@
+\subsubsection*{Answer 1}
+
+\textbf{1.} The output shape is given by the formula:
+
+\[
+\text{Output size} = \frac{\text{Input size} - \text{Filter size} + 2 \times \text{Padding}}{\text{Stride}} + 1
+\]
+
+Thus, we have:
+
+\[
+\frac{64 - 6 + 2\times 1}{2} + 1 = \frac{60}{2} + 1 = 31
+\]
+
+The output shape is $31 \times 31 \times 10$.
+
+Number of parameters (weights + biases):
+
+Each filter: $6 \times 6 \times 10 = 360$ parameters.  
+
+Total weights for 10 filters: $360 \times 10 = 3600$ parameters.  
+
+Biases for each filter: $10$ parameters.
+
+Therefore, total parameters: $3600 + 10 = 3610$.
+
+\vspace{1em}
+
+\textbf{2.} Yes, it is possible. Two successive convolutional layers, each with filter size $5\times 5$, stride 1 and padding 0, can be represented as a single convolutional layer. The equivalent single convolution filter size will be:
+
+\[
+(5 + 5 - 1) \times (5 + 5 - 1) = 9 \times 9
+\]
+
+Thus, the equivalent single filter size is $9 \times 9$.
+
+\vspace{1em}
+
+\textbf{3.} Yes, pooling layers do cause loss of information because they aggregate local spatial information. However, pooling layers are still widely used because:
+
+(1) Pooling reduces the spatial dimension of feature maps, significantly decreasing computational cost and memory usage.
+
+(2) Pooling layers provide a form of spatial invariance, making the CNN less sensitive to small translations or variations in input.
+

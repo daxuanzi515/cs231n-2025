@@ -1,0 +1,42 @@
+\subsubsection*{Answer 2}
+
+\textbf{1.} My answer is as follows:
+
+Function $F(z, w)$ is the forward convolution function that convolves input image $z$ with kernel $w$ to produce the output feature map $x$. It is necessary because it computes the output activations for forward propagation.
+
+Function $G(\epsilon)$ is the backward convolution (gradient) function. It computes gradients of the loss with respect to inputs $z$ (denoted as $g_z$) and weights $w$ (denoted as $g_w$), given the upstream gradient $\epsilon$. It is needed to perform the backward propagation (training) to update parameters using gradients.
+
+\vspace{1em}
+
+\textbf{2.} Shapes are as follows:
+
+ (1) $x$: $(126, 126)$, since $128 - 3 + 1 = 126$.
+ 
+ (2) $\epsilon$: Same as $x$, thus $(126, 126)$.
+ 
+ (3) $g_z$: Same shape as original input $z$, thus $(128, 128)$.
+ 
+ (4) $g_w$: Same shape as convolution kernel $w$, thus $(3, 3)$.
+  
+\vspace{1em}
+
+\textbf{3.} My answer is as follows:
+\begin{itemize}
+ \item \textbf{Forward pass computational cost:}
+
+Output dimension: $126\times126$, each position involves a $3\times3$ convolution operation, thus:
+
+Multiplications per output pixel: $3 \times 3 = 9$  
+Additions per output pixel: $9 - 1 = 8$
+
+Total multiplications: $126 \times 126 \times 9 = 142,884$  
+Total additions: $126 \times 126 \times 8 = 126,112$
+
+ \item \textbf{Backward pass computational cost for $g_w$:}
+
+Gradient $g_w$ has size $3\times3$. Each parameter of $g_w$ is computed by convolution of input $z$ (size $128\times128$) and gradient $\epsilon$ (size $126\times126$):
+
+Total multiplications: same as forward pass, $126\times126\times9=142,884$  
+Total additions: $126\times126\times8=126,112$
+
+\end{itemize}

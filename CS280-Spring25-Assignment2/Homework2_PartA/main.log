@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.2)  16 MAR 2025 01:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.3.2)  16 MAR 2025 01:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/Master1_backend/Lectures/CS280/Assignments/CS280-Spring25-Assignment1/Home
-work1_partA_/homework1.tex
+**d:/Master1_backend/Lectures/CS280/Assignments/CS280-Spring25-Assignment2/Home
+work2_PartA/main.tex
 
-(d:/Master1_backend/Lectures/CS280/Assignments/CS280-Spring25-Assignment1/Homew
-ork1_partA_/homework1.tex
+(d:/Master1_backend/Lectures/CS280/Assignments/CS280-Spring25-Assignment2/Homew
+ork2_PartA/main.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 (E:\formalFiles\MikTex\tex/latex/base\article.cls
@@ -185,33 +185,10 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 \Gin@req@height=\dimen158
 \Gin@req@width=\dimen159
 )
-(E:\formalFiles\MikTex\tex/latex/url\url.sty
-\Urlmuskip=\muskip17
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
-(E:\formalFiles\MikTex\tex/latex/xcolor\xcolor.sty
-Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
-
-(E:\formalFiles\MikTex\tex/latex/graphics-cfg\color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package xcolor Info: Driver file: pdftex.def on input line 274.
-
-(E:\formalFiles\MikTex\tex/latex/graphics\mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
-Package xcolor Info: Model `RGB' extended on input line 1366.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
-)
 \c@theorem=\count278
 \c@axiom=\count279
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 4
-4.
+1.
 
 (E:\formalFiles\MikTex\tex/latex/psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -220,23 +197,23 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count280
 \l__pdf_internal_box=\box53
-) (homework1.aux)
-\openout1 = `homework1.aux'.
+) (main.aux)
+\openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -293,13 +270,13 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 (E:\formalFiles\MikTex\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
 
 
 (E:\formalFiles\MikTex\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
 
 
 (E:\formalFiles\MikTex\tex/latex/amsfonts\umsb.fd
@@ -307,51 +284,60 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {C:/Users/WIN11/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{E:/formalFile
-s/MikTex/fonts/enc/dvips/base/8r.enc}] [2] (answers/answer_A.tex [3]) [4]
-<partA_loss.png, id=26, 1008.76875pt x 632.3625pt>
-File: partA_loss.png Graphic file (type png)
-<use partA_loss.png>
-Package pdftex.def Info: partA_loss.png  used on input line 106.
-(pdftex.def)             Requested size: 453.94174pt x 284.5605pt.
- (answers/answer_B.tex [5 <./partA_loss.png>]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 8
-.
- (E:\formalFiles\MikTex\tex/latex/psnfss\ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-Overfull \hbox (43.95871pt too wide) in paragraph at lines 17--28
- [][] 
+s/MikTex/fonts/enc/dvips/base/8r.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 54--62
+
  []
 
-[6]) [7] (homework1.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--62
+
+ []
+
+[2] (answers/answer1.tex) [3]
+<examp.png, id=15, 685.56125pt x 532.99126pt>
+File: examp.png Graphic file (type png)
+<use examp.png>
+Package pdftex.def Info: examp.png  used on input line 81.
+(pdftex.def)             Requested size: 142.26378pt x 110.59769pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--92
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--92
+
+ []
+
+[4 <./examp.png>] (answers/answer2.tex
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
+5.
+
+(E:\formalFiles\MikTex\tex/latex/psnfss\ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)) [5] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4319 strings out of 474486
- 64059 string characters out of 5754543
- 1942542 words of memory out of 5000000
- 26539 multiletter control sequences out of 15000+600000
- 577454 words of font info for 81 fonts, out of 8000000 for 9000
+ 3716 strings out of 474486
+ 55409 string characters out of 5754543
+ 1930542 words of memory out of 5000000
+ 25955 multiletter control sequences out of 15000+600000
+ 573022 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,65p,635b,232s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<E:/formalFiles/MikTex/fonts/type1/public/amsfonts/cm/cmex10.pfb><E:/formalFi
-les/MikTex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><E:/formalFiles/MikTex/fon
-ts/type1/public/amsfonts/cm/cmmi6.pfb><E:/formalFiles/MikTex/fonts/type1/public
-/amsfonts/cm/cmmi8.pfb><E:/formalFiles/MikTex/fonts/type1/public/amsfonts/cm/cm
-r12.pfb><E:/formalFiles/MikTex/fonts/type1/public/amsfonts/cm/cmr6.pfb><E:/form
-alFiles/MikTex/fonts/type1/public/amsfonts/cm/cmr8.pfb><E:/formalFiles/MikTex/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb><E:/formalFiles/MikTex/fonts/type1/pub
-lic/amsfonts/symbols/msam10.pfb><E:/formalFiles/MikTex/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb><E:/formalFiles/MikTex/fonts/type1/urw/times/utmb8a.pfb>
-<E:/formalFiles/MikTex/fonts/type1/urw/times/utmbi8a.pfb><E:/formalFiles/MikTex
-/fonts/type1/urw/times/utmr8a.pfb><E:/formalFiles/MikTex/fonts/type1/urw/times/
-utmri8a.pfb>
-Output written on homework1.pdf (7 pages, 251958 bytes).
+ 57i,7n,65p,472b,237s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<E:/formalFiles/MikTex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><E:/formalFi
+les/MikTex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><E:/formalFiles/MikTex/font
+s/type1/public/amsfonts/cm/cmr12.pfb><E:/formalFiles/MikTex/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb><E:/formalFiles/MikTex/fonts/type1/urw/times/utmb8a.pfb>
+<E:/formalFiles/MikTex/fonts/type1/urw/times/utmr8a.pfb>
+Output written on main.pdf (5 pages, 118252 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 50 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

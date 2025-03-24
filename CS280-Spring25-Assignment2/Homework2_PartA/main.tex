@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}%
+\usepackage{amsfonts}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2.2cm, right=2.2cm]%
+{geometry}
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{changepage}
+\usepackage{amssymb}
+\usepackage{graphicx}%
+\setcounter{MaxMatrixCols}{30}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\begin{document}
+
+\title{CS280 Spring 2025 Assignment 2 \\ Part A}
+\author{Convolutional Neural Network}
+\maketitle
+
+\paragraph{Name: Chen Xuanxin}
+
+\paragraph{Student ID: 2024233125}
+
+\newpage 
+
+\subsubsection*{\textbf{1. CNNs (10 points)}}
+Answer the following questions about convolutional neural networks.
+\vspace{0.5em}
+\\
+1. Consider a convolutional layer with 10 filters of size $6 \times 6$, a stride of 2 and a padding of 1. Suppose the input of the layer has shape $64 \times 64 \times 10$ (with spatial size $64 \times 64$ and 10 channels). What is the output shape? What is the number of parameters of the layer (consider the weights and bias)?
+\\\\
+2. Suppose there are two convolutional layers, each of which has a filter of size $5 \times 5$, a stride of 1, a padding of 0. Is it possible to interpret the result of applying the two convolutional layers successively to an input as the result of applying a single convolutional layer to the input? If so, what is the filter size of the single convolutional layer?   
+\\\\
+3. Does pooling layers cause loss of information in the inputs? If so, why are pooling layers still used in CNNs (please give at least two reasons)?
+
+\newpage
+
+\input{answers/answer1.tex}
+
+\newpage
+
+\subsubsection*{\boldmath{2. Backpropagation of CNNs (10 points)}}
+Let $f_w(z)=z*w$ be the forward model for a 2D convolutional layer with a single input channel and a single 
+output channel, where $w$ represents a 
+$3\times3$ convolution kernel with no padding and a stride of 1, and 
+$z$ represents a single-channel $128\times128$ image. \\
+The following two functions must be implemented in order to implement 
+both the forward pass and backward pass for this single layer:
+$$x = F(z, w),$$
+$$(g_z, g_w) = G(\epsilon).$$
+The figures below illustrate the functions graphically:
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=5cm]{examp.png}
+\end{figure}
+
+\noindent Answer the following questions:
+\vspace{0.5em}
+\\
+1. Explain what the two functions $F(z, w)$ and $G(\epsilon)$ do. For each function, explain why it is needed. 
+\\\\   
+2. What are the shapes of each of the following: $x$, $\epsilon$, $g_z$, $g_w$? 
+\\\\
+3. What is the computational cost (the number of multiplications and additions) of the convolutional layer in forward pass? What is the computational cost (the number of multiplications and additions) of $g_w$ in backward pass?
+
+\newpage
+
+\input{answers/answer2.tex}
+
+\end{document}
