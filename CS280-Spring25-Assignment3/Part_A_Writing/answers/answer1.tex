@@ -1,0 +1,67 @@
+\subsubsection*{Answer 1}
+\textbf{(a)}
+We need to find parameters \(w_1\), \(w_2\), and \(b\) such that the RNN generates the output sequence \([0, 0, 0, 1, 1, 1, 1]\) given the input sequence \([0, 0, 0, 1, 0, 1, 0]\).
+The hidden state \(s_t\) is computed as:
+$
+s_t = \text{step}(w_1 x_t + w_2 s_{t-1} + b),
+$
+where \(\text{step}(z) = 1\) if \(z > 0\), and \(0\) otherwise. 
+The output \(y_t = s_t\).
+
+To generate the desired output sequence, we analyze the input and output transitions:
+\begin{enumerate}
+   \item Time step 1-3: Input is \(0\), output is \(0\). This implies:
+   \[
+   w_1 \cdot 0 + w_2 \cdot 0 + b \leq 0 \implies b \leq 0.
+   \]
+
+   \item Time step 4: Input is \(1\), output transitions to \(1\). This requires:
+   \[
+   w_1 \cdot 1 + w_2 \cdot 0 + b > 0 \implies w_1 + b > 0.
+   \]
+
+   \item Time step 5-7: Input alternates between \(0\) and \(1\), but output remains \(1\). This requires:
+   \[
+   w_1 \cdot x_t + w_2 \cdot 1 + b > 0 \quad \text{for all } x_t \in \{0, 1\}.
+   \]
+\end{enumerate}
+
+To satisfy these conditions, we can set:
+\[
+w_1 = 1, \quad w_2 = 2, \quad b = -1.
+\]
+
+\textbf{Verification:}
+
+   \begin{itemize}
+      \item For \(t = 1-3\): \(s_t = \text{step}(1 \cdot 0 + 2 \cdot 0 - 1) = 0\).
+
+      \item For \(t = 4\): \(s_4 = \text{step}(1 \cdot 1 + 2 \cdot 0 - 1) = \text{step}(0) = 1\).
+
+      \item For \(t \geq 5\): \(s_t = \text{step}(1 \cdot x_t + 2 \cdot 1 - 1)\). Since \(x_t \geq 0\), \(1 \cdot x_t + 2 \cdot 1 - 1 \geq 1 > 0\), so \(s_t = 1\).
+   \end{itemize}
+
+\textbf{(b)} 
+It is not possible to use the given RNN to generate the output sequence \([1, 1, 1, 0, 0, 0, 1, 1]\) from the input sequence \([0, 0, 0, 1, 0, 0, 1, 0]\). 
+The output sequence starts with \(1\), which requires \(s_0 = 1\). However, the problem states \(s_0 = 0\), which is a contradiction.
+Even if \(s_0 = 1\), the output sequence transitions from \(1\) to \(0\) at \(t=4\). This would require:
+  \[
+  w_1 \cdot x_4 + w_2 \cdot s_3 + b \leq 0.
+  \]
+  But \(x_4 = 1\) and \(s_3 = 1\), so:
+  \[
+  w_1 + w_2 + b \leq 0.
+  \]
+  However, the output transitions back to \(1\) at \(t=7\), requiring:
+  \[
+  w_1 \cdot x_7 + w_2 \cdot s_6 + b > 0.
+  \]
+  Since \(x_7 = 1\) and \(s_6 = 0\), this implies:
+  \[
+  w_1 + b > 0.
+  \]
+  These two conditions are contradictory:
+  \[
+  w_1 + w_2 + b \leq 0 \quad \text{and} \quad w_1 + b > 0.
+  \]
+  Therefore, no parameters \(w_1, w_2, b\) can satisfy both.
